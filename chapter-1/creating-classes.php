@@ -1,9 +1,12 @@
-<?php // class-methods.php
+<?php // constructors.php
 
 class Product
 {
-    public $name = 'soap';
-    public $price = 100;
+    public function __construct($name = 'Soap', $price = 100)
+    {
+        $this->name = $name;
+        $this->price = $price;
+    }
 
     public function priceAsCurrency($divisor = 1, $currencySymbol = '$')
     {
@@ -12,8 +15,8 @@ class Product
         return $currencySymbol . $priceAsCurrency;
     }
 }
-# challenge: give $divisor a default value
-# test it out by passing and not passing
-$product = new Product();
-print $product->priceAsCurrency(currencySymbol: '£') . PHP_EOL;
-
+# give the constructor arguments default values
+# use named arguments to only pass a price argument
+$product = new Product(price: 200);
+print $product->name . PHP_EOL;
+print $product->price . PHP_EOL;
