@@ -2,10 +2,9 @@
 
 class Product
 {
-    public function __construct($name = 'Soap', $price = 100)
+    public function __construct(public $name = 'Soap', public $price = 100)
     {
-        $this->name = $name;
-        $this->price = $price;
+
     }
 
     public function priceAsCurrency($divisor = 1, $currencySymbol = '$')
