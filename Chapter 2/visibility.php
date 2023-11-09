@@ -11,4 +11,8 @@ $subObject = new SubClass();
 
 //print $baseObject->getPrivateProperty() . PHP_EOL;
 
-print $subObject->getParentPrivateProperty() . PHP_EOL;
+//print $subObject->getParentPrivateProperty() . PHP_EOL;
+
+//print $baseObject->getProtectedProperty() . PHP_EOL;
+
+print $subObject->getParentProtectedProperty() . PHP_EOL;

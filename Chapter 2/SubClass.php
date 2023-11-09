@@ -2,7 +2,7 @@
 
 class SubClass extends BaseClass
 {
-    public function getParentProtectedProperty(): string
+    public function getParentProtectedProperty():string
     {
         return $this->getProtectedProperty();
     }
