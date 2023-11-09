@@ -1,6 +1,8 @@
 <?php // inheritance.php
 
-require_once 'Book.php';
+require_once 'PhysicalBook.php';
 
-$physicalBook = new Book('A Random Book', 'Jane Doe', 2000);
-$digitalBook = new Book('A Random Book', 'Jane Doe', 2000);
+$physicalBook = new PhysicalBook('A Random Book', 'Jane Doe', 2000);
+$physicalBook->weight = 300;
+
+print $physicalBook->print() . PHP_EOL;
