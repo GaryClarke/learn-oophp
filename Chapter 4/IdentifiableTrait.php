@@ -6,4 +6,9 @@ trait IdentiableTrait
     {
         return bin2hex(random_bytes(5));
     }
+
+    public function getId(): string
+    {
+        return 'ID returned from trait';
+    }
 }
