@@ -13,4 +13,6 @@ abstract class Book
     {
         return $this->title;
     }
+
+    abstract protected function write(): string;
 }

@@ -6,3 +6,4 @@ require_once 'PhysicalBook.php';
 $book = new PhysicalBook('Hamlet', 500);
 
 print $book->getTitle() . PHP_EOL;
+print $book->write() . PHP_EOL;
