@@ -11,7 +11,7 @@ class JsonFileReader
 
         $content = file_get_contents($filename);
 
-        $items = json_decode($content, true);
+        $items = json_decode(json: $content, associative: true, flags: JSON_THROW_ON_ERROR);
 
         return $items;
     }
