@@ -9,9 +9,11 @@ try {
 
     print_r($items);
 
-} catch (JsonException $jsonException) {
+} catch (FileNotFoundException|JsonException) {
 
-    print 'There is a problem with JSON: ' . $jsonException->getMessage() . ' on line ' . $jsonException->getLine() . ' in file ' . $jsonException->getFile() . PHP_EOL;
+//    print 'File problem: ' . $fileException->getMessage() . ' on line ' . $fileException->getLine() . ' in file ' . $fileException->getFile() . PHP_EOL;
+
+    print 'File problem..figure it out yourself..';
 
 } catch (Exception $exception) {
 

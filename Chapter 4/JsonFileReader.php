@@ -1,12 +1,14 @@
 <?php // JsonFileReader.php
 
+require_once 'FileNotFoundException.php';
+
 class JsonFileReader
 {
     public function readFileAsAssociativeArray(string $filename): array
     {
         if (!file_exists($filename)) {
 
-            throw new Exception('File could not be found');
+            throw new FileNotFoundException('File could not be found');
         }
 
         $content = file_get_contents($filename);
