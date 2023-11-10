@@ -1,33 +1,16 @@
 <?php // Book.php
 
-require_once 'Identifiable.php';
-require_once 'IdentifiableTrait.php';
-
-class Book implements Identifiable
+abstract class Book implements IdentifiableTrait
 {
-    use IdentifiableTrait;
+    public $title;
 
-    private int $id;
-
-    private string $name;
-
-    public function getId(): int
+    public function __construct(string $title)
     {
-        return $this->id;
+        $this->title = $title;
     }
 
-    public function getName(): string
+    public function getTitle(): string
     {
-        return $this->name;
-    }
-
-    public function setId(int $id): void
-    {
-        $this->id = $id;
-    }
-
-    public function setName(string $name): void
-    {
-        $this->name = $name;
+        return $this->title;
     }
 }
