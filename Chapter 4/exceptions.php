@@ -2,7 +2,14 @@
 
 require_once 'JsonFileReader.php';
 
-$reader = new JsonFileReader();
-$items = $reader->readFileAsAssociativeArray('foo.json');
+try {
 
-print_r($items);
+    $reader = new JsonFileReader();
+    $items = $reader->readFileAsAssociativeArray('foo.json');
+
+    print_r($items);
+    
+} catch (Exception $exception) {
+
+    print $exception->getMessage() . PHP_EOL;
+}
