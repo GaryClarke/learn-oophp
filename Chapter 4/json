@@ -1,0 +1,17 @@
+[
+    {
+        "item_id": "1",
+        "name": "Torch",
+        "price": "20"
+    },
+    {
+        "item_id": "2",
+        "name": "Tent",
+        "price": "200"
+    },
+    {
+        "item_id": "3",
+        "name": "Stove",
+        "price": "50"
+    }
+]
