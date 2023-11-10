@@ -1,16 +1,8 @@
 <?php // Book.php
 
-abstract class Book implements IdentifiableTrait
+require_once 'Model.php';
+
+class Book extends Model
 {
-    public $title;
 
-    public function __construct(string $title)
-    {
-        $this->title = $title;
-    }
-
-    public function getTitle(): string
-    {
-        return $this->title;
-    }
 }
