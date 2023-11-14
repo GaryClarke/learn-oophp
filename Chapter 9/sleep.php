@@ -23,6 +23,11 @@ class Department
 
         return [];
     }
+
+    public function __wakeup(): void
+    {
+        echo 'Being unserialized...performing extra unserialization tasks...' . PHP_EOL;
+    }
 }
 
 $manager = new Manager('Manager A');
