@@ -1,5 +1,7 @@
 <?php // tests/AccountTest.php
 
+declare(strict_types=1);
+
 use PHPUnit\Framework\TestCase;
 
 class AccountTest extends TestCase
@@ -11,9 +13,9 @@ class AccountTest extends TestCase
         $account = new \App\Account();
 
         // Do something
-        $account->setAccountNumber(1);
+        $account->setAccountNumber(12345);
 
         // Make assertions
-        $this->assertSame(1, $account->getAccountNumber());
+        $this->assertSame(12345, $account->getAccountNumber());
     }
 }

@@ -2,11 +2,11 @@
 
 namespace App;
 
-class Account 
+class Account
 {
     private int $accountNumber;
 
-    public function setAccountNumber($accountNumber): void
+    public function setAccountNumber(int $accountNumber): void
     {
         $this->accountNumber = $accountNumber;
     }
