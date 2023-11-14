@@ -5,7 +5,7 @@ namespace App;
 class OrderController
 {
 
-    public function create(Order $order, SmsNotifier $notifier)
+    public function create(Order $order, NotifierInterface $notifier)
     {
         // 1. Save an order to the database
         echo 'Saving order to the database...' . PHP_EOL;

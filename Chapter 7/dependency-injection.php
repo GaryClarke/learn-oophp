@@ -5,4 +5,6 @@ require_once 'vendor/autoload.php';
 $order = new \App\Order();
 $orderController = new \App\OrderController();
 
-$orderController->create($order, new \App\SmsNotifier());
+$notifier = new \App\EmailNotifier();
+
+$orderController->create($order, $notifier);
