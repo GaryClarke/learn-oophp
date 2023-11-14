@@ -5,13 +5,9 @@ use PHPUnit\Framework\TestCase;
 
 class CartTest extends TestCase
 {
-    public function testCorrectNetPriceIsReturned(): void
+    protected function setUp(): void
     {
-        $cart = new Cart();
-        $cart->price = 10;
-        $netPrice = $cart->getNetPrice();
-
-        $this->assertEquals(12, $netPrice);
+        Cart::$tax = 1.2;
     }
 
     /** @test */
@@ -22,5 +18,14 @@ class CartTest extends TestCase
         $cart->price = 10;
 
         $this->assertEquals(15, $cart->getNetPrice());
+    }
+
+    public function testCorrectNetPriceIsReturned(): void
+    {
+        $cart = new Cart();
+        $cart->price = 10;
+        $netPrice = $cart->getNetPrice();
+
+        $this->assertEquals(12, $netPrice);
     }
 }
