@@ -18,4 +18,18 @@ class AccountTest extends TestCase
         // Make assertions
         $this->assertSame(12345, $account->getAccountNumber());
     }
+
+    /** @test */
+    public function an_account_can_be_related_to_a_user(): void
+    {
+        // Setup
+        $account = new \App\Account();
+        $user = new App\User();
+
+        // Do something
+        $account->setUser($user);
+
+        // Make assertions
+        $this->assertSame($user, $account->getUser());
+    }
 }
