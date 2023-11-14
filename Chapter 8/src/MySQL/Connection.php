@@ -2,13 +2,26 @@
 
 namespace App\MySQL;
 
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\ORMSetup;
+
 class Connection
 {
     private static ?self $instance = null;
+    private EntityManager $entityManager;
 
     private function __construct()
     {
-        
+        $config = ORMSetup::createAttributeMetadataConfiguration(
+            paths: array(dirname(__DIR__)),
+            isDevMode: true
+        );
+
+        $connection = [
+            'url' => 'mysql://root@localhost:3306/doctrine-demo?charset=utf8mb4',
+        ];
+
+        $this->entityManager = EntityManager::create($connection, $config);
     }
 
     public static function getInstance(): self
@@ -18,5 +31,10 @@ class Connection
         }
 
         return self::$instance;
+    }
+
+    public function getEntityManager(): EntityManager
+    {
+        return $this->entityManager;
     }
 }
