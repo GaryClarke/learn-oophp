@@ -1,8 +1,10 @@
-<?php // to-string.php
+<?php // destruct.php
 
 require_once 'Paragraph.php';
 
 $paragraph = new Paragraph('I ❤️ GaryClarkeTech');
+
+unset($paragraph);
 
 ?>
 
