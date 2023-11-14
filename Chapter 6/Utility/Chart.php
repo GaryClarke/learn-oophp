@@ -1,4 +1,6 @@
-<?php // Chart.php
+<?php // Utility/Chart.php
+
+namespace Utility;
 
 class Chart
 {

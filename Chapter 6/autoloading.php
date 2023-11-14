@@ -1,14 +1,16 @@
 <?php // autoloading.php
 
-$simpleAutoload = function(string $classname) {
+// autoload from same folder
+use Utility\Chart;
 
-    if (file_exists("{$classname}.php")) {
-        require_once "{$classname}.php";
-    }
-};
-
-
-spl_autoload_register($simpleAutoload);
+require_once 'autoload.php';
 
 $chart = new Chart();
-print $chart->draw();
+print $chart->draw() . PHP_EOL;
+
+$connection = new \Postgres\Connection(); 
+print $connection->connect() . PHP_EOL;
+
+// autoload from namespaced folder
+
+// default
