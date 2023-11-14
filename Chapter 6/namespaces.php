@@ -1,8 +1,17 @@
 <?php // namespaces.php
 
-require_once 'mysql-connection.php';
-require_once 'postgresql-connection.php';
+// class name clash
+require_once 'MySql/Connection.php';
+require_once 'Postgres/Connection.php';
 
-$mySqlConnection = new \MySql\Connection();
+use MySql\Connection as MySqlConnection;
+use Postgres\Connection as PostgresConnection;
+
+$mySqlConnection = new MySqlConnection();
+$postgresConnection = new PostgresConnection();
 
 print $mySqlConnection->connect() . PHP_EOL;
+
+print $postgresConnection->connect() . PHP_EOL;
+
+// folder structure

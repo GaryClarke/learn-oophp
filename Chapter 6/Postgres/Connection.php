@@ -1,4 +1,4 @@
-<?php // postgresql-connection.php
+<?php // Postgres/Connection.php
 
 namespace Postgres;
 

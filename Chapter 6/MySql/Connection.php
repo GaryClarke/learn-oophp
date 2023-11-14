@@ -1,4 +1,4 @@
-<?php // mysql-connection.php
+<?php // MySql/Connection.php
 
 namespace MySql;
 
