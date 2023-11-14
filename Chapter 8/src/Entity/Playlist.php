@@ -43,4 +43,9 @@ class Playlist
     {
         return $this->category;
     }
+
+    public function getSongs()
+    {
+        return $this->songs;
+    }
 }

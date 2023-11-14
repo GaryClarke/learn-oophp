@@ -39,4 +39,9 @@ class Song
     {
         return $this->fileLocation;
     }
+
+    public function getArtist(): ?Artist
+    {
+        return $this->artist;
+    }
 }
