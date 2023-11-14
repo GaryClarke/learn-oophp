@@ -7,26 +7,22 @@ class Song
     public function __construct(
         public string $title,
         public string $artist,
-        public int $duration
+        public int $duration,
+        private SongDataWriter $writer
     )
     {
     }
 
-    public function write($format): string
+    public function write(): string
     {
-        if ($format === 'json') {
-
-            return json_encode($this);
-        }
-
-        return $this->title . ' - ' . $this->artist . ' - ' . $this->getDurationInMinutes();
+        return $this->writer->write($this);
     }
 
-    private function getDurationInMinutes(): string
+    public function getDurationInMinutes(): string
     {
         $seconds = $this->duration % 60;
 
-        $seconds = str_pad($seconds, 2, '0', STR_PAD_LEFT);
+        $seconds = str_pad($seconds, 2, '0', STR_PAD_RIGHT);
 
         $minutes = (int) (($this->duration - $seconds) / 60);
 
