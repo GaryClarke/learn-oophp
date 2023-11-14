@@ -2,7 +2,7 @@
 
 namespace App;
 
-class User
+class User implements AuthenticatedUserInterface
 {
     public function __construct(private int $id, private string $name)
     {
