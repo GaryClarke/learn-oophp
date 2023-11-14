@@ -1,13 +1,12 @@
-<?php // src/Entity/Playlist.php
+<?php // src/Entity/Artist.php
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity]
-#[ORM\Table(name: 'playlists')]
-class Playlist
+#[ORM\Table(name: 'artists')]
+class Artist
 {
     #[ORM\Id]
     #[ORM\Column(type: 'integer')]
@@ -17,8 +16,8 @@ class Playlist
     #[ORM\Column(type: 'string')]
     private ?string $name;
 
-    #[ORM\Column(type: 'string')]
-    private ?string $category;
+    #[ORM\OneToMany(targetEntity: 'Song', mappedBy: 'artist')]
+    private $songs;
 
     public function getId(): ?int
     {
@@ -28,10 +27,5 @@ class Playlist
     public function getName(): ?string
     {
         return $this->name;
-    }
-
-    public function getCategory(): ?string
-    {
-        return $this->category;
     }
 }
