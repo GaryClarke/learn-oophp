@@ -5,7 +5,7 @@ namespace App;
 class Account
 {
     private int $accountNumber;
-    private User $user;
+    private User $accountHolder;
 
     public function setAccountNumber(int $accountNumber): void
     {
@@ -17,13 +17,13 @@ class Account
         return $this->accountNumber;
     }
 
-    public function setUser(User $user): void
+    public function setAccountHolder(User $accountHolder): void
     {
-        $this->user = $user;
+        $this->accountHolder = $accountHolder;
     }
 
-    public function getUser(): User
+    public function getAccountHolder(): User
     {
-        return $this->user;
+        return $this->accountHolder;
     }
 }

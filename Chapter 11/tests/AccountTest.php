@@ -24,12 +24,12 @@ class AccountTest extends TestCase
     {
         // Setup
         $account = new \App\Account();
-        $user = new App\User();
+        $accountHolder = new App\User();
 
         // Do something
-        $account->setUser($user);
+        $account->setAccountHolder($accountHolder);
 
         // Make assertions
-        $this->assertSame($user, $account->getUser());
+        $this->assertSame($accountHolder, $account->getAccountHolder());
     }
 }
