@@ -10,28 +10,36 @@ class Product
     {
     }
 
-    public function __get(string $name)
+    public function getName(): string
     {
-        $methodName = "get$name";
+        return $this->manufacturer . ' ' . $this->itemName;
+    }
+
+    public function __get(string $propertyName)
+    {
+        $methodName = "get$propertyName";
 
         if (method_exists($this, $methodName)) {
-            return  $this->$methodName();
+
+            return $this->$methodName();
         }
     }
 
-    public function __set(string $propertyName, mixed $value): void
+    public function __set(string $propertyName, $value): void
     {
         $methodName = "set" . ucwords($propertyName);
 
         if (!method_exists($this, $methodName)) {
-            throw new BadMethodCallException("Method {$methodName} does not exist.");
+            throw new BadMethodCallException('Method ' . $methodName . ' does not exist');
         }
 
         $this->$methodName($value);
     }
 
-    public function getName(): string
+    public function __unset(string $propertyName): void
     {
-        return $this->manufacturer . ' ' . $this->itemName;
+        $this->__set($propertyName, null);
     }
+
+
 }
