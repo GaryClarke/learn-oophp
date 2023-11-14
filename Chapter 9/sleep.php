@@ -1,4 +1,4 @@
-<?php // serializing-objects.php
+<?php // sleep.php
 
 require_once 'vendor/autoload.php';
 
@@ -16,22 +16,20 @@ class Department
     public function __construct(public string $name)
     {
     }
+
+    public function __sleep(): array
+    {
+        echo 'Sleeping...' . PHP_EOL;
+
+        return [];
+    }
 }
 
 $manager = new Manager('Manager A');
 
 $sales = new Department('sales');
-
 $sales->manager = $manager;
-
-$deepCopy = unserialize(serialize($sales));
-
-dd($deepCopy === $sales);
 
 $ser = serialize($sales);
 
-$un = unserialize($ser);
-
-$un->manager->name = 'Manager B';
-
-dd($sales, $un);
+dd(unserialize($ser));
