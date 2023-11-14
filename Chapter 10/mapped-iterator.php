@@ -1,6 +1,6 @@
 <?php // src/mapped-iterator.php
 
-class MappedIteratorDemo implements Iterator
+class MappedIteratorDemo implements Iterator, Countable
 {
 
     public function __construct(private array $items = [])
@@ -50,3 +50,5 @@ foreach ($mappedIteratorDemo as $item => $value) {
 
     print "$item: $value" . PHP_EOL;
 }
+
+print count($mappedIteratorDemo) . PHP_EOL; // Countable
