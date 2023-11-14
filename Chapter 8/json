@@ -1,0 +1,10 @@
+{
+    "require-dev": {
+        "symfony/var-dumper": "^6.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src"
+        }
+    }
+}
