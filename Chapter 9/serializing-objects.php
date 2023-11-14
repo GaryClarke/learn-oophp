@@ -24,6 +24,14 @@ $sales = new Department('sales');
 
 $sales->manager = $manager;
 
+$deepCopy = unserialize(serialize($sales));
+
+dd($deepCopy === $sales);
+
 $ser = serialize($sales);
 
-dd($ser);
+$un = unserialize($ser);
+
+$un->manager->name = 'Manager B';
+
+dd($sales, $un);
