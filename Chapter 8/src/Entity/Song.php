@@ -22,6 +22,9 @@ class Song
     #[ORM\ManyToOne(targetEntity: 'Artist', inversedBy: 'songs')]
     private ?Artist $artist;
 
+    #[ORM\ManyToMany(targetEntity: 'Playlist', mappedBy: 'songs')]
+    private $playlists;
+
     public function getId(): ?int
     {
         return $this->id;
