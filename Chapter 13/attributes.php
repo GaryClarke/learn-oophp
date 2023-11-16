@@ -5,10 +5,12 @@ use App\Validation\Validator;
 
 require_once 'vendor/autoload.php';
 
-$userRegistration = new UserRegistration('', 'gary@example.com');
+$userRegistration = new UserRegistration('', '');
 
 $validator = new Validator();
 
 $validator->validate($userRegistration);
 
 $errors = $validator->getErrors();
+
+dd($errors);
