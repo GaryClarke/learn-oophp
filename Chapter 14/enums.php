@@ -1,5 +1,7 @@
 <?php // enums.php
 
+require_once 'vendor/autoload.php';
+
 enum HttpStatusCode: int
 {
     case Ok = 200;
@@ -40,6 +42,10 @@ class Response
     }
 }
 
-$status = HttpStatusCode::LargeHeaders;
+$cases = HttpStatusCode::cases();
 
-echo $status->message() . PHP_EOL;
+$code1 = HttpStatusCode::Ok;
+$code2 = HttpStatusCode::Ok;
+$code3 = HttpStatusCode::Forbidden;
+
+dd($codek1 === $code3);
