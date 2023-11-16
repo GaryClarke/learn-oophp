@@ -2,7 +2,9 @@
 
 namespace App\Validation\Rules;
 
+use App\Validation\Validators\ValidatorInterface;
+
 interface ValidationRuleInterface
 {
-    public function getValidator();
+    public function getValidator(): ValidatorInterface;
 }

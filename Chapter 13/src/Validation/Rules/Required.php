@@ -2,13 +2,14 @@
 
 namespace App\Validation\Rules;
 
+use App\Validation\Validators\ValidatorInterface;
 use Attribute;
 
 #[Attribute]
 class Required implements ValidationRuleInterface
 {
-    public function getValidator()
+    public function getValidator(): ValidatorInterface
     {
-        // TODO: Implement getValidator() method.
+        dd('asdasj');
     }
 }

@@ -24,15 +24,18 @@ class Validator
                 ReflectionAttribute::IS_INSTANCEOF
             );
 
-            dd($attributes);
-
             // Loop over the Attributes
+            foreach($attributes as $attribute) {
 
-            // Instantiate a PropertyValidator instance using $attribute->getValidator();
+                // Call $attribute->getValidator();
+                $validator = $attribute->newInstance()->getValidator();
 
-            // Ask IF the property does not validate
+                // Ask IF the property does not validate
+                if (!$validator->validate($property->getValue($object))) {
+                    // Add the property to errors with a message
+                }
 
-            // Add the property to errors with a message
+            }
         }
     }
 }
