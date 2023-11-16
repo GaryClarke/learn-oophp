@@ -3,10 +3,10 @@
 namespace App\OldStuff;
 
 use App\OldStuff\FileWriter;
+use App\Service;
 
-class ExampleProcessor
+class ExampleProcessor implements Service
 {
-
     private \App\OldStuff\FileWriter $fileWriter;
 
     public function __construct(FileWriter $fileWriter)
