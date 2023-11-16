@@ -5,9 +5,22 @@ enum HttpStatusCode: int
     case Ok = 200;
     case Created = 201;
     case BadRequest = 400;
-    case Unauthorized = 401;
     case Forbidden = 403;
+    case LargeHeaders = 431;
     case InternalServerError = 500;
+
+    public function message(): string
+    {
+        return match ($this)
+        {
+            self::Ok => 'Request OK',
+            self::Created => 'Resource Created',
+            self::BadRequest => 'Bad Request',
+            self::LargeHeaders => 'Request Header Fields Too Large',
+            self::Forbidden => 'Forbidden Request',
+            self::InternalServerError => 'Internal Server Error',
+        };
+    }
 }
 
 class Response
@@ -27,6 +40,6 @@ class Response
     }
 }
 
-$response = new Response('Some content', HttpStatusCode::Created, []);
+$status = HttpStatusCode::LargeHeaders;
 
-echo $response->getStatusCodeValue() . PHP_EOL;
+echo $status->message() . PHP_EOL;
