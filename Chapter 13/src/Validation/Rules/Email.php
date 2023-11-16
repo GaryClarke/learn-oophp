@@ -1,16 +1,16 @@
-<?php // src/Validation/Rules/Required.php
+<?php // src/Validation/Rules/Email.php
 
 namespace App\Validation\Rules;
 
-use App\Validation\Validators\RequiredValidator;
+use App\Validation\Validators\EmailValidator;
 use App\Validation\Validators\ValidatorInterface;
 use Attribute;
 
 #[Attribute]
-class Required implements ValidationRuleInterface
+class Email implements ValidationRuleInterface
 {
     public function getValidator(): ValidatorInterface
     {
-        return new RequiredValidator();
+        return new EmailValidator();
     }
 }
