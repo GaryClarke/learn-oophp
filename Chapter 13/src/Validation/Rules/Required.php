@@ -2,6 +2,7 @@
 
 namespace App\Validation\Rules;
 
+use App\Validation\Validators\RequiredValidator;
 use App\Validation\Validators\ValidatorInterface;
 use Attribute;
 
@@ -10,6 +11,6 @@ class Required implements ValidationRuleInterface
 {
     public function getValidator(): ValidatorInterface
     {
-        dd('asdasj');
+        return new RequiredValidator();
     }
 }

@@ -32,10 +32,15 @@ class Validator
 
                 // Ask IF the property does not validate
                 if (!$validator->validate($property->getValue($object))) {
-                    // Add the property to errors with a message
+                    $this->errors[$property->getName()][] = sprintf(
+                        "Invalid value for '%s' using '%s' validation.",
+                        $property->getName(),
+                        $attribute->getName()
+                    );
                 }
-
             }
         }
+
+        dd($this->errors);
     }
 }
