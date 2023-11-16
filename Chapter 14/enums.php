@@ -25,6 +25,7 @@ enum HttpStatusCode: int
     }
 }
 
+
 class Response
 {
     const HTTP_OK = 200;
@@ -42,10 +43,8 @@ class Response
     }
 }
 
-$cases = HttpStatusCode::cases();
+$code = HttpStatusCode::from(403); // exception if not found
 
-$code1 = HttpStatusCode::Ok;
-$code2 = HttpStatusCode::Ok;
-$code3 = HttpStatusCode::Forbidden;
+$unfoundCode = HttpStatusCode::tryFrom(666); // null if not found
 
-dd($codek1 === $code3);
+dd($unfoundCode);
