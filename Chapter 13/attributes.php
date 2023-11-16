@@ -1,11 +1,11 @@
-<?php // attributes.php
+<?php
 
 use App\DTO\UserRegistration;
 use App\Validation\Validator;
 
 require_once 'vendor/autoload.php';
 
-$userRegistration = new UserRegistration('', '');
+$userRegistration = new UserRegistration('gary', 'gary@example.com');
 
 $validator = new Validator();
 
