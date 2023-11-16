@@ -6,7 +6,8 @@ use App\OldStuff\FileWriter;
 
 class ExampleProcessor
 {
-    private FileWriter $fileWriter;
+
+    private \App\OldStuff\FileWriter $fileWriter;
 
     public function __construct(FileWriter $fileWriter)
     {
