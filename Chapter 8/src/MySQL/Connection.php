@@ -21,7 +21,7 @@ class Connection
             'url' => 'mysql://root@localhost:3306/doctrine-demo?charset=utf8mb4',
         ];
 
-        $this->entityManager = EntityManager::create($connection, $config);
+        $this->entityManager = new EntityManager($connection, $config);
     }
 
     public static function getInstance(): self
